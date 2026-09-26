@@ -20,12 +20,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.codelab.friendlychat.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        
         binding.messageEditText.setText("Build erfolgreich - Firebase entfernt")
     }
 }
