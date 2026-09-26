@@ -1,39 +1,14 @@
-plugins {
-    id("com.android.application")
-}
-
-android {
-    namespace = "com.google.firebase.codelab.friendlychat"
-    compileSdk = 34
-
-    defaultConfig {
-        applicationId = "com.google.firebase.codelab.friendlychat"
-        minSdk = 21
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-    buildFeatures {
-        viewBinding = true
-    }
-}
-
-dependencies {
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-}
+workflows:
+  android-workflow:
+    name: Android Debug APK
+    instance_type: mac_mini_m1
+    scripts:
+      - name: Set up local properties
+        script: |
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/build-android-start/local.properties"
+      - name: Build APK
+        script: |
+          cd build-android-start
+          ./gradlew assembleDebug
+    artifacts:
+      - build-android-start/app/build/outputs/apk/debug/*.apk
