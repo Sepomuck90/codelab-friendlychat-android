@@ -2,7 +2,6 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     id("com.android.application")
-    id("com.google.gms.google-services")
 }
 
 android {
@@ -10,7 +9,7 @@ android {
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "'com.google.gms.google-services'"
+        applicationId = "com.google.firebase.codelab.friendlychat1"
         minSdk = 24
         targetSdk = 37
         versionCode = 1
@@ -59,17 +58,6 @@ dependencies {
     implementation("androidx.media:media:1.8.0")
     implementation("androidx.core:core-ktx:1.19.0")
 
-    // Google
-    implementation("com.google.android.gms:play-services-auth:22.0.0")
-
-    // Firebase
-       implementation 'com.google.firebase:firebase-bom:32.7.0'
-       implementation 'com.google.firebase:firebase-auth'
-       implementation 'com.google.firebase:firebase-database'
-
-    // Firebase UI
-    implementation("com.firebaseui:firebase-ui-auth:9.1.1")
-    implementation("com.firebaseui:firebase-ui-database:9.1.1")
 
     // Testing dependencies
     testImplementation("junit:junit:4.13.2")
