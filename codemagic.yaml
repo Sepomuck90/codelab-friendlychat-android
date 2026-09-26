@@ -2,18 +2,13 @@ workflows:
   android-workflow:
     name: Android Debug APK
     instance_type: mac_mini_m1
-    working_directory: build-android-start
     scripts:
       - name: Set up local properties
         script: |
-          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/build-android-start/local.properties"
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
       - name: Build APK
-        script: ./gradlew assembleDebug
-      - name: List APK files
-        script: find . -name "*.apk"
+        script: |
+          cd android
+          ./gradlew assembleDebug
     artifacts:
-      - build-android-start/**/*.apk
-    publishing:
-      email:
-        recipients:
-          - kutschmann.s@web.de
+      - android/app/build/outputs/apk/debug/*.apk
