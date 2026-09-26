@@ -10,7 +10,7 @@ android {
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.google.firebase.codelab.friendlychat"
+        applicationId = "'com.google.gms.google-services'"
         minSdk = 24
         targetSdk = 37
         versionCode = 1
@@ -63,10 +63,9 @@ dependencies {
     implementation("com.google.android.gms:play-services-auth:22.0.0")
 
     // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:34.19.0"))
-    implementation("com.google.firebase:firebase-database")
-    implementation("com.google.firebase:firebase-storage")
-    implementation("com.google.firebase:firebase-auth")
+       implementation 'com.google.firebase:firebase-bom:32.7.0'
+       implementation 'com.google.firebase:firebase-auth'
+       implementation 'com.google.firebase:firebase-database'
 
     // Firebase UI
     implementation("com.firebaseui:firebase-ui-auth:9.1.1")
