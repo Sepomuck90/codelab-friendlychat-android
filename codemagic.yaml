@@ -4,7 +4,14 @@ workflows:
     instance_type: mac_mini_m1
     working_directory: build-android-start
     scripts:
+      - name: Set up local properties
+        script: |
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/build-android-start/local.properties"
       - name: Build APK
         script: ./gradlew assembleDebug
     artifacts:
-      - build-android-start/app/build/outputs/apk/**/*.apk
+      - build-android-start/app/build/outputs/apk/debug/*.apk
+    publishing:
+      email:
+        recipients:
+          - kutschmann8@gmail.com
