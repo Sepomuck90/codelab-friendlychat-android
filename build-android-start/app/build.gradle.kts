@@ -6,8 +6,6 @@ plugins {
     id("org.jetbrains.kotlin.android") version "2.4.20" apply false
 }
      
-id("com.android.application")
-}
 
 android {
     namespace = "com.google.firebase.codelab.friendlychat"
@@ -62,7 +60,6 @@ dependencies {
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("androidx.media:media:1.8.0")
     implementation("androidx.core:core-ktx:1.19.0")
-
 
     // Testing dependencies
     testImplementation("junit:junit:4.13.2")
