@@ -28,4 +28,4 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.messageEditText.setText("Build erfolgreich - Firebase entfernt")
     }
-}q
+}
