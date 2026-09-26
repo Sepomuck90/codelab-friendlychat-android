@@ -9,7 +9,7 @@ android {
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.google.firebase.codelab.friendlychat1"
+        applicationId = "com.google.firebase.codelab.friendlychat"
         minSdk = 24
         targetSdk = 37
         versionCode = 1
