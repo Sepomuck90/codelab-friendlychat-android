@@ -1,0 +1,10 @@
+workflows:
+  android-workflow:
+    name: Android Debug APK
+    instance_type: mac_mini_m1
+    working_directory: build-android-start
+    scripts:
+      - name: Build APK
+        script: ./gradlew assembleDebug
+    artifacts:
+      - build-android-start/app/build/outputs/**/*.apk
