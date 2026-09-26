@@ -9,9 +9,11 @@ workflows:
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/build-android-start/local.properties"
       - name: Build APK
         script: ./gradlew assembleDebug
+      - name: List APK files
+        script: find . -name "*.apk"
     artifacts:
-      - build-android-start/app/build/outputs/apk/debug/*.apk
+      - build-android-start/**/*.apk
     publishing:
       email:
         recipients:
-          - kutschmann8@gmail.com
+          - kutschmann.s@web.de
